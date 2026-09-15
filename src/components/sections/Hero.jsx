@@ -207,7 +207,7 @@ export default function Hero() {
                 </a>
               </div>
 
-              <div ref={statsRef} className="mt-10 flex items-center gap-6 sm:gap-8">
+              <div ref={statsRef} className="mt-10 flex flex-wrap items-center gap-4 sm:gap-8">
                 {[["3+", "Projects shipped"], ["MERN", "Primary stack"], ["APIs", "Auth and backend"]].map(
                   (item, i) => (
                     <div key={item[1]} className={i > 0 ? "pl-6 sm:pl-8 border-l border-white/10" : ""}>

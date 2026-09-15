@@ -213,7 +213,7 @@ function Marquee({ reverse = false }) {
   const items = [...MARQUEE_TECHS, ...MARQUEE_TECHS];
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden" style={{ contain: "paint" }}>
       <div
         ref={trackRef}
         className="flex gap-2 sm:gap-4 will-change-transform"

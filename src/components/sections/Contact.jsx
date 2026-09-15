@@ -57,7 +57,7 @@ function ContactInfoCard({ icon: Icon, label, value, href, index }) {
       </div>
       <div>
         <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">{label}</p>
-        <p className="text-white text-sm font-medium mt-0.5">{value}</p>
+        <p className="text-white text-sm font-medium mt-0.5 break-words">{value}</p>
       </div>
     </motion.div>
   );

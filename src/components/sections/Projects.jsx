@@ -105,7 +105,7 @@ function ProjectCard({ project, index }) {
   return (
     <div
       ref={cardRef}
-      className="relative flex-shrink-0 w-[90vw] xs:w-[80vw] sm:w-[70vw] md:w-[60vw] lg:w-[55vw] xl:w-[48vw] h-[65vh] sm:h-[75vh] rounded-lg sm:rounded-2xl overflow-hidden cursor-pointer group"
+      className="relative flex-shrink-0 w-full lg:w-[55vw] xl:w-[48vw] min-h-[460px] sm:min-h-[520px] lg:h-[75vh] lg:min-h-0 rounded-lg sm:rounded-2xl overflow-hidden cursor-pointer group"
       style={{ marginRight: "3vw" }}
     >
       {/* Background image */}
@@ -243,7 +243,13 @@ export default function Projects() {
 
       /* ── 4. Horizontal scroll ── */
       const track   = trackRef.current;
+      const isCompact = window.matchMedia("(max-width: 1023px)").matches;
       const totalW  = track.scrollWidth - window.innerWidth;
+
+      if (isCompact) {
+        gsap.set(track, { x: 0 });
+        return;
+      }
 
       const hScroll = gsap.to(track, {
         x: -totalW,
@@ -346,7 +352,7 @@ export default function Projects() {
         </div>
 
         {/* Progress row */}
-        <div className="flex items-center gap-4 mt-8 sm:mt-12">
+        <div className="hidden lg:flex items-center gap-4 mt-8 sm:mt-12">
           <span
             ref={countRef}
             className="text-xs text-gray-600 font-['Space_Grotesk'] tabular-nums min-w-[60px]"
@@ -368,7 +374,7 @@ export default function Projects() {
       <div ref={pinRef} className="relative overflow-hidden">
         <div
           ref={trackRef}
-          className="flex items-center will-change-transform"
+          className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 lg:gap-0 will-change-transform"
           style={{ paddingLeft: "3vw", paddingRight: "3vw", paddingTop: "2vh", paddingBottom: "2vh" }}
         >
           {PROJECTS.map((project, i) => (
@@ -379,7 +385,7 @@ export default function Projects() {
 
           {/* End card — CTA */}
           <div
-            className="flex-shrink-0 w-[60vw] sm:w-[50vw] md:w-[35vw] lg:w-[22vw] h-[65vh] sm:h-[75vh] rounded-lg sm:rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl flex flex-col items-center justify-center gap-4 sm:gap-6 cursor-pointer group hover:border-blue-500/30 transition-all duration-500"
+            className="flex-shrink-0 w-full lg:w-[22vw] min-h-[220px] lg:h-[75vh] rounded-lg sm:rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl flex flex-col items-center justify-center gap-4 sm:gap-6 cursor-pointer group hover:border-blue-500/30 transition-all duration-500"
             style={{ marginRight: "3vw" }}
           >
             <div className="w-10 sm:w-14 h-10 sm:h-14 rounded-full border border-white/10 group-hover:border-blue-500/50 flex items-center justify-center transition-all duration-300">
