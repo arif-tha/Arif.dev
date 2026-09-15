@@ -168,7 +168,7 @@ export default function Hero() {
               <div ref={badgeRef} className="flex items-center gap-2 mb-6 sm:mb-8">
                 <span className="w-2 h-2 rounded-full bg-[#34D1C4]"></span>
                 <span className="text-white/50 text-xs sm:text-sm">
-                  Available for freelance projects
+                  Open to internships and freelance work
                 </span>
               </div>
 
@@ -177,34 +177,33 @@ export default function Hero() {
                   ref={line1Ref}
                   className="text-[clamp(2.5rem,7vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-white"
                 >
-                  Building modern websites & web applications for businesses.
+                  MD Arif
                 </h1>
               </div>
 
               <h2 ref={line2Ref} className="mt-2 text-[clamp(1.25rem,3vw,2.25rem)] font-medium text-white/60">
-                Freelance full-stack web developer
+                Full-stack developer, BCA student
               </h2>
 
               <p ref={subRef} className="mt-6 text-white/50 text-sm sm:text-base max-w-md leading-relaxed">
-                I’m MD Arif, a freelance full-stack web developer focused on building responsive,
-                modern, and production-ready websites and web applications. I turn business
-                requirements into polished digital experiences using modern web technologies.
+                I build responsive web applications with the MERN stack, thoughtful interfaces,
+                backend APIs, authentication, and features that ship.
               </p>
 
               <div ref={ctaRef} className="mt-8 flex flex-wrap items-center gap-5">
                 <div ref={btnRef} className="inline-block">
                   <a
-                    href="#contact"
+                    href="#projects"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#5B8DEF] text-white text-sm font-medium hover:bg-[#4a7ce0] transition-colors"
                   >
-                    Start a Project
+                    View projects
                   </a>
                 </div>
                 <a
-                  href="#projects"
+                  href="#contact"
                   className="text-white/50 hover:text-white text-sm font-medium underline underline-offset-4 decoration-white/20 hover:decoration-white/50 transition-colors"
                 >
-                  View My Work
+                  Get in touch
                 </a>
               </div>
 
